@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Алеся Брагина — Операционное управление проектами и бизнесами</title>
-<meta name="description" content="Операционное управление проектами и бизнесами. Операционный менеджер · Проджект-менеджер. Опыт 4+ года.">
+<meta name="description" content="Операционное управление проектами и бизнесами. Операционный менеджер · Проджект-менеджер. Опыт 3 года.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -35,6 +35,1701 @@ body {
   font-family: 'Inter', -apple-system, sans-serif;
   font-weight: 400;
   font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* === NAV === */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 100;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+nav .nav-logo,
+nav .nav-links a {
+  color: rgba(248, 242, 234, 0.85);
+  transition: color 0.3s ease;
+}
+
+nav .nav-cta {
+  background: rgba(248, 242, 234, 0.15);
+  color: #FDF9F2;
+  border: 1px solid rgba(248, 242, 234, 0.25);
+}
+
+nav .nav-cta:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+nav.scrolled {
+  background: rgba(248, 242, 234, 0.92);
+  border-bottom-color: var(--line);
+  box-shadow: var(--shadow-sm);
+}
+
+nav.scrolled .nav-logo,
+nav.scrolled .nav-links a {
+  color: var(--text);
+}
+
+nav.scrolled .nav-links a {
+  color: var(--text-muted);
+}
+
+nav.scrolled .nav-cta {
+  background: var(--accent);
+  color: var(--bg-card);
+  border-color: var(--accent);
+}
+
+nav.scrolled .nav-cta:hover {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.nav-logo {
+  font-family: 'Lora', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.nav-logo span { color: inherit; }
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.25s ease;
+}
+
+.nav-links a:hover::after { width: 100%; }
+
+.nav-cta {
+  padding: 8px 18px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.nav-cta:hover {
+  transform: translateY(-1px);
+}
+
+/* === HERO === */
+.hero {
+  background: linear-gradient(180deg, #5E1A2C 0%, #3D0F1C 100%);
+  color: #F8F2EA;
+  padding: 90px 0 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(240, 220, 200, 0.10) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 22px;
+  background: rgba(248, 242, 234, 0.10);
+  border: 1px solid rgba(248, 242, 234, 0.22);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #F0DCC8;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 36px;
+  backdrop-filter: blur(4px);
+}
+
+.hero-roles-label {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: rgba(240, 220, 200, 0.7);
+  letter-spacing: 0.5px;
+  margin-bottom: 18px;
+}
+
+.hero-roles-cards {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 36px;
+  width: 100%;
+  max-width: 620px;
+}
+
+.role-card {
+  flex: 1;
+  min-width: 240px;
+  padding: 24px 28px;
+  background: rgba(248, 242, 234, 0.06);
+  border: 1px solid rgba(248, 242, 234, 0.18);
+  border-radius: 14px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  text-align: left;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.role-card:hover {
+  background: rgba(248, 242, 234, 0.10);
+  border-color: rgba(248, 242, 234, 0.35);
+  transform: translateY(-3px);
+}
+
+.role-card-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(240, 220, 200, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #F0DCC8;
+  flex-shrink: 0;
+}
+
+.role-card-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.role-card-title {
+  font-family: 'Lora', serif;
+  font-size: 19px;
+  font-weight: 600;
+  color: #FDF9F2;
+  letter-spacing: -0.2px;
+  line-height: 1.2;
+}
+
+/* Experience pill row */
+.hero-experience {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  padding: 14px 28px;
+  background: rgba(248, 242, 234, 0.08);
+  border: 1px solid rgba(248, 242, 234, 0.20);
+  border-radius: 100px;
+  margin-bottom: 36px;
+  backdrop-filter: blur(4px);
+}
+
+.hero-exp-item {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.hero-exp-num {
+  font-family: 'Lora', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #FDF9F2;
+  letter-spacing: -0.5px;
+}
+
+.hero-exp-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(240, 220, 200, 0.80);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.hero-exp-divider {
+  width: 1px;
+  height: 24px;
+  background: rgba(248, 242, 234, 0.25);
+}
+
+.hero-meta {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 14px;
+  color: rgba(240, 220, 200, 0.85);
+  padding-top: 24px;
+  border-top: 1px dashed rgba(240, 220, 200, 0.20);
+  margin-top: 8px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.hero-meta b {
+  color: #FDF9F2;
+  font-weight: 600;
+}
+
+.hero-meta .sep {
+  color: rgba(240, 220, 200, 0.30);
+}
+
+/* === HERO INFO (light section with slogan) === */
+.hero-info {
+  background: var(--bg);
+  padding: 80px 0 60px;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.hero-info-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-info .hero-quote {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  color: var(--text);
+  margin: 0;
+  max-width: 900px;
+}
+
+.hero-info .hero-quote em {
+  font-style: italic;
+  font-weight: 700;
+  color: var(--accent-dark);
+}
+
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-photo-circle {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.hero-photo-circle::before {
+  content: '';
+  position: absolute;
+  inset: -16px;
+  border: 1px dashed var(--accent-soft);
+  border-radius: 50%;
+  animation: rotate 60s linear infinite;
+  opacity: 0.6;
+}
+
+.hero-photo-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 50%;
+  border: 6px solid rgba(248, 242, 234, 0.10);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.40);
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.hero-name {
+  font-family: 'Lora', serif;
+  font-size: clamp(44px, 6.5vw, 68px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -2px;
+  color: #FDF9F2;
+  margin-bottom: 14px;
+}
+
+.hero-tagline {
+  font-family: 'Lora', serif;
+  font-size: clamp(18px, 2.2vw, 24px);
+  font-weight: 500;
+  line-height: 1.35;
+  color: #F0DCC8;
+  letter-spacing: -0.2px;
+  margin-bottom: 22px;
+  max-width: 720px;
+}
+
+.hero-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 22px;
+  background: rgba(248, 242, 234, 0.10);
+  border: 1px solid rgba(248, 242, 234, 0.22);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #F0DCC8;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 36px;
+  backdrop-filter: blur(4px);
+}
+
+.hero-status .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.2);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.hero-quote {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  color: #FDF9F2;
+  margin: 16px 0 36px;
+  max-width: 800px;
+}
+
+.hero-quote em {
+  font-style: italic;
+  font-weight: 700;
+  color: #F0DCC8;
+}
+
+.hero-roles {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.hero-roles-label {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: rgba(240, 220, 200, 0.7);
+  letter-spacing: 0.5px;
+  margin-bottom: 14px;
+  margin-top: 4px;
+}
+
+.hero-roles span {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #FDF9F2;
+  padding: 9px 20px;
+  background: rgba(248, 242, 234, 0.10);
+  border: 1px solid rgba(248, 242, 234, 0.22);
+  border-radius: 100px;
+  white-space: nowrap;
+  backdrop-filter: blur(4px);
+}
+
+.hero-meta {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 14px;
+  color: #F0DCC8;
+}
+
+.hero-meta b {
+  color: #FDF9F2;
+  font-weight: 600;
+}
+
+.hero-meta .sep {
+  opacity: 0.4;
+}
+
+/* === STATS === */
+.stats {
+  padding: 60px 0;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--line);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.stat {
+  text-align: center;
+  position: relative;
+}
+
+.stat:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 60px;
+  background: var(--line);
+}
+
+.stat-num {
+  font-family: 'Lora', serif;
+  font-size: 44px;
+  font-weight: 600;
+  color: var(--accent-dark);
+  line-height: 1;
+  margin-bottom: 8px;
+  letter-spacing: -1px;
+}
+
+.stat-num .small { font-size: 26px; }
+
+.stat-label {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 400;
+  line-height: 1.4;
+  max-width: 180px;
+  margin: 0 auto;
+}
+
+/* === SECTION === */
+section.s {
+  padding: 100px 0;
+}
+
+.about-section {
+  padding: 80px 0 60px !important;
+}
+
+.about-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-inner .section-eyebrow {
+  margin-bottom: 32px;
+}
+
+.about-inner .section-title {
+  margin-bottom: 32px;
+}
+
+.about-heading {
+  display: inline-block;
+  font-family: 'Lora', serif;
+  font-size: clamp(34px, 5vw, 52px);
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: var(--accent-dark);
+  padding: 18px 48px;
+  margin-bottom: 40px;
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  background: var(--bg-card);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.about-heading::before,
+.about-heading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.4;
+}
+
+.about-heading::before { left: -56px; }
+.about-heading::after { right: -56px; }
+
+@media (max-width: 880px) {
+  .about-heading::before,
+  .about-heading::after { display: none; }
+  .about-heading { padding: 14px 32px; }
+}
+
+.about-text {
+  text-align: left;
+  font-family: 'Lora', serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.about-text p {
+  margin-bottom: 18px;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+.about-text strong {
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+
+.section-head {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: 'Lora', serif;
+  font-size: clamp(34px, 4vw, 46px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--accent-dark);
+}
+
+.section-sub {
+  font-size: 17px;
+  color: var(--text-muted);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.55;
+}
+
+/* === SKILLS === */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.skill-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line-soft);
+  border-radius: 20px;
+  padding: 32px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--line);
+  box-shadow: var(--shadow-md);
+}
+
+.skill-card:hover::before { transform: scaleX(1); }
+
+.skill-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--bg-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: var(--accent-dark);
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover .skill-icon {
+  background: var(--accent-dark);
+  color: var(--bg);
+}
+
+.skill-icon svg { width: 22px; height: 22px; }
+
+.skill-title {
+  font-family: 'Lora', serif;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--text);
+  letter-spacing: -0.3px;
+}
+
+.skill-list {
+  list-style: none;
+}
+
+.skill-list li {
+  font-size: 14px;
+  color: var(--text-muted);
+  padding: 6px 0;
+  padding-left: 18px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.skill-list li em {
+  font-style: italic;
+  color: var(--text-muted);
+  opacity: 0.75;
+  font-size: 13px;
+}
+
+.skill-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 13px;
+  width: 8px;
+  height: 1px;
+  background: var(--accent);
+}
+
+/* === EDU & QUALITIES === */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.col-title {
+  font-family: 'Lora', serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: var(--text);
+  letter-spacing: -0.3px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.col-title::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.edu-item {
+  padding: 16px 0;
+  border-bottom: 1px dashed var(--line);
+}
+
+.edu-item:last-child { border-bottom: none; }
+
+.edu-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.edu-name { font-weight: 500; font-size: 15px; }
+
+.edu-detail {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+.edu-year {
+  color: var(--accent-dark);
+  font-weight: 600;
+  font-family: 'Lora', serif;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.qualities-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.q-item {
+  padding: 16px 0;
+  border-bottom: 1px dashed var(--line);
+}
+
+.q-item:last-child { border-bottom: none; }
+
+.q-title {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 17px;
+  color: var(--accent-dark);
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.q-text {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.q-text em {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* === EDUCATION CENTERED === */
+.edu-centered {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.edu-centered .col-title {
+  justify-content: center;
+  font-size: 30px;
+  margin-bottom: 32px;
+}
+
+.edu-centered .col-title::before { display: none; }
+
+.edu-centered .edu-item {
+  text-align: center;
+}
+
+.edu-centered .edu-row {
+  justify-content: center;
+}
+
+/* === QUALITIES AS CARDS === */
+.q-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.q-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line-soft);
+  border-radius: 20px;
+  padding: 32px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.q-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.q-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--line);
+  box-shadow: var(--shadow-md);
+}
+
+.q-card:hover::before { transform: scaleX(1); }
+
+.q-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--bg-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: var(--accent-dark);
+  transition: all 0.3s ease;
+}
+
+.q-card:hover .q-card-icon {
+  background: var(--accent-dark);
+  color: var(--bg);
+}
+
+.q-card-icon svg { width: 22px; height: 22px; }
+
+.q-card-title {
+  font-family: 'Lora', serif;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: var(--text);
+  letter-spacing: -0.3px;
+}
+
+.q-card-text {
+  font-size: 14.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 880px) {
+  .q-cards { grid-template-columns: 1fr; }
+}
+
+/* === EXPERIENCE TIMELINE === */
+.timeline {
+  position: relative;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 24px;
+  top: 16px;
+  bottom: 16px;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--line) 8%, var(--line) 92%, transparent);
+}
+
+.tl-item {
+  position: relative;
+  padding-left: 76px;
+  padding-bottom: 48px;
+}
+
+.tl-item:last-child { padding-bottom: 0; }
+
+.tl-dot {
+  position: absolute;
+  left: 8px;
+  top: 6px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 2px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-dark);
+  font-family: 'Lora', serif;
+  z-index: 2;
+  box-shadow: 0 0 0 6px var(--bg);
+  transition: all 0.3s ease;
+}
+
+.tl-item:hover .tl-dot {
+  background: var(--accent-dark);
+  color: var(--bg);
+  border-color: var(--accent-dark);
+}
+
+.tl-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line-soft);
+  border-radius: 20px;
+  padding: 32px 36px;
+  transition: all 0.3s ease;
+}
+
+.tl-card:hover {
+  border-color: var(--line);
+  box-shadow: var(--shadow-md);
+}
+
+.tl-period {
+  display: inline-block;
+  font-size: 13px;
+  color: var(--accent-dark);
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  padding: 5px 12px;
+  background: var(--bg-soft);
+  border-radius: 6px;
+}
+
+.tl-role {
+  font-family: 'Lora', serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+}
+
+.tl-company {
+  font-size: 17px;
+  color: var(--accent-dark);
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.tl-context {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin-bottom: 22px;
+  font-style: italic;
+}
+
+.tl-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--accent-dark);
+  font-weight: 500;
+  padding: 8px 0;
+  transition: gap 0.2s ease;
+}
+
+.tl-toggle:hover { gap: 10px; }
+
+.tl-toggle svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.3s ease;
+}
+
+.tl-card.open .tl-toggle svg { transform: rotate(180deg); }
+
+.tl-bullets {
+  list-style: none;
+  margin-top: 18px;
+  display: none;
+  padding-top: 18px;
+  border-top: 1px dashed var(--line);
+}
+
+.tl-card.open .tl-bullets { display: block; animation: fadeIn 0.4s ease; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tl-bullets li {
+  font-size: 15.5px;
+  color: var(--text);
+  padding: 11px 0 11px 22px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.tl-bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 20px;
+  width: 12px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.tl-bullets li strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.tl-bullets li .num {
+  color: var(--accent-dark);
+  font-weight: 700;
+  background: var(--accent-soft);
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* === CTA SECTION === */
+.cta {
+  padding: 100px 0;
+  background: var(--bg-card);
+  border-top: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  top: -300px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 600px;
+  background: radial-gradient(circle, var(--accent-soft) 0%, transparent 60%);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.cta-inner {
+  text-align: center;
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta h2 {
+  font-family: 'Lora', serif;
+  font-size: clamp(34px, 4vw, 48px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+}
+
+.cta h2 em {
+  font-style: italic;
+  color: var(--accent-dark);
+}
+
+.cta p {
+  font-size: 18px;
+  color: var(--text-muted);
+  margin-bottom: 36px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--bg-card);
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* === FOOTER === */
+footer {
+  padding: 32px 0;
+  background: var(--bg-soft);
+  border-top: 1px solid var(--line);
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* === REVEAL ANIMATION === */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 880px) {
+  .container { padding: 0 20px; }
+  .hero { padding: 100px 0 60px; }
+  .hero-name { font-size: clamp(40px, 10vw, 56px) !important; }
+  .hero-quote { font-size: clamp(26px, 7vw, 40px) !important; }
+  .hero-roles { gap: 8px; }
+  .hero-roles span { font-size: 11px; padding: 7px 14px; letter-spacing: 1px; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .stat:not(:last-child)::after { display: none; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .two-col { grid-template-columns: 1fr; gap: 48px; }
+  section.s { padding: 70px 0; }
+  .section-head { margin-bottom: 40px; }
+  .nav-links { display: none; }
+  .tl-item { padding-left: 56px; }
+  .timeline::before { left: 16px; }
+  .tl-dot { left: 0; width: 32px; height: 32px; }
+  .tl-card { padding: 24px; }
+  .tl-role { font-size: 22px; }
+}
+
+@media (max-width: 480px) {
+  .stats-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">Алеся <span>Брагина</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">О себе</a></li>
+      <li><a href="#skills">Компетенции</a></li>
+      <li><a href="#education">Образование</a></li>
+      <li><a href="#qualities">Качества</a></li>
+      <li><a href="#experience">Опыт</a></li>
+      <li><a href="#contact">Контакты</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Связаться</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="about">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-photo-circle">
+        <img src="https://i.postimg.cc/7ZYF8V9C/IMG-7490.jpg" 
+             alt="Алеся Брагина"
+             referrerpolicy="no-referrer"
+             loading="eager">
+      </div>
+      <h1 class="hero-name">Алеся Брагина</h1>
+      <div class="hero-tagline">Операционное управление проектами и&nbsp;бизнесами</div>
+      <div class="hero-status">
+        <span class="dot"></span>
+        Открыта к&nbsp;предложениям · Удалённо
+      </div>
+      <div class="hero-roles-label">Роли, которые занимаю в&nbsp;проектах</div>
+      <div class="hero-roles-cards">
+        <div class="role-card">
+          <div class="role-card-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+            </svg>
+          </div>
+          <div class="role-card-title">Операционный менеджер</div>
+        </div>
+        <div class="role-card">
+          <div class="role-card-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+            </svg>
+          </div>
+          <div class="role-card-title">Проджект-менеджер</div>
+        </div>
+      </div>
+      <div class="hero-experience">
+        <div class="hero-exp-item">
+          <span class="hero-exp-num">3</span>
+          <span class="hero-exp-label">года опыта</span>
+        </div>
+        <div class="hero-exp-divider"></div>
+        <div class="hero-exp-item">
+          <span class="hero-exp-num">Middle</span>
+          <span class="hero-exp-label">уровень</span>
+        </div>
+      </div>
+      <div class="hero-meta">
+        <b>Удалённо</b><span class="sep">·</span><b>возможны встречи в&nbsp;Краснодаре</b>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HERO INFO BLOCK -->
+<section class="hero-info">
+  <div class="container">
+    <div class="hero-info-inner">
+      <p class="hero-quote">Превращаю <em>хаос</em> в&nbsp;систему</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat reveal">
+        <div class="stat-num"><span class="small">до</span> 15<span class="small"> млн ₽</span></div>
+        <div class="stat-label">оборот компании в&nbsp;месяц под управлением</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-num">−50<span class="small">%</span></div>
+        <div class="stat-label">снижение ручного труда команды<br>через интеграции и регламенты</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-num">×2</div>
+        <div class="stat-label">снижение себестоимости материала</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-num">1<span class="small"> млн ₽+</span></div>
+        <div class="stat-label">экономии бюджета компании<br>за&nbsp;год</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="s about-section">
+  <div class="container">
+    <div class="about-inner reveal">
+      <div class="about-heading">Обо&nbsp;мне</div>
+      <div class="about-text">
+        <p>За <strong>3 года</strong> я прошла путь от помощника до заместителя директора. Этот рост стал возможен благодаря ответственному подходу, желанию учиться и привычке доводить задачи и проекты до конца.</p>
+        <p>Работала в производстве бескаркасной мебели с продажами через маркетплейсы, в сегментах <strong>B2B и B2C</strong>: импорт из Китая, сфера услуг.</p>
+        <p>Ниша для меня не ограничение. Захожу в любую сферу, быстро разбираюсь и навожу порядок в процессах и команде.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="s" id="skills">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2 class="section-title" style="font-size: clamp(40px, 5vw, 56px);">Мои ключевые <em>компетенции</em></h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+        </div>
+        <h3 class="skill-title">Команда и подрядчики</h3>
+        <ul class="skill-list">
+          <li><strong>Написание базы знаний компании с нуля</strong> — должностные инструкции, регламенты, обучающие материалы</li>
+          <li><strong>Координация команды и подрядчиков</strong> — постановка задач, контроль дедлайнов, единая отчётность</li>
+          <li>Управление командой 15+ человек</li>
+          <li>Найм, обучение, наставничество, ввод новых сотрудников</li>
+          <li>Работа с самозанятыми и ИП — договоры, выплаты</li>
+          <li><strong>Выстраивание зон ответственности</strong> — кто за что отвечает, без провисаний</li>
+          <li><strong>Контроль качества работы подрядчиков</strong> — приёмка, сроки, переделки</li>
+        </ul>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <h3 class="skill-title">Системы и автоматизация</h3>
+        <ul class="skill-list">
+          <li><strong>Внедрение таск-трекера на каждом проекте</strong> (YouGile и др.) — основа прозрачности и контроля</li>
+          <li>Разработка и запуск проектов с нуля в разных сферах</li>
+          <li>Интеграции систем и приложений (API, готовые модули)</li>
+          <li>Постановка задач подрядчикам и IT-разработчикам</li>
+          <li><strong>Работаю в связке с AI (ChatGPT, Claude), которые заменяют ассистента</strong> — сайты, базы данных, боты и нейро-сотрудники, автоматизация рутины и документов</li>
+          <li>Снижение ручного труда команды на 50%</li>
+        </ul>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+        </div>
+        <h3 class="skill-title">Финансы и документооборот</h3>
+        <ul class="skill-list">
+          <li><strong>Переговоры с крупными клиентами и поставщиками</strong> — заключение договоров, сопровождение сделок</li>
+          <li>Работа с финансами: все платежи, контроль и приоритизация выплат</li>
+          <li>1С:Бухгалтерия, кадровый учёт, ответы ФНС</li>
+          <li>Восстановление бухгалтерского учёта с нуля</li>
+          <li>Договоры с подрядчиками, акты, счета</li>
+          <li>Охрана труда: журналы, инструктажи, расследования</li>
+          <li>Электронный документооборот (ЭДО)</li>
+          <li>Банк-клиенты: СБЕР Бизнес, Дом РФ, ВТБ</li>
+        </ul>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <h3 class="skill-title">Сервис и работа с клиентами</h3>
+        <ul class="skill-list">
+          <li>Поддержка и развитие сервис-службы</li>
+          <li>Метрики: конверсия, удержание, лояльность</li>
+          <li>Сценарии общения и стандарты сервиса</li>
+          <li>Навыки продаж и работа с возражениями</li>
+          <li>Обучение менеджеров (наставничество)</li>
+          <li>Решение конфликтных и сложных кейсов</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION & QUALITIES -->
+<section class="s" id="education" style="background: var(--bg-card); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+  <div class="container">
+    <div class="edu-centered reveal">
+      <h2 class="col-title">Образование</h2>
+      <div class="edu-item">
+        <div class="edu-row">
+          <div>
+            <div class="edu-name">Среднее специальное</div>
+            <div class="edu-detail">Организация и управление перевозками на ж/д транспорте</div>
+          </div>
+        </div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-row">
+          <div>
+            <div class="edu-name" style="color: var(--accent-dark);">Повышение квалификации</div>
+            <div class="edu-detail">Курс «Проджект-менеджер» · Анна Самокатова</div>
+          </div>
+        </div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-row">
+          <div>
+            <div class="edu-name">Курс «Я — менеджер блогера»</div>
+            <div class="edu-detail">laizafox</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUALITIES -->
+<section class="s" id="qualities" style="background: var(--bg-soft); border-top: 1px solid var(--line);">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2 class="section-title">Личные <em>качества</em></h2>
+    </div>
+    <div class="q-cards">
+      <div class="q-card reveal">
+        <div class="q-card-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="q-card-title">Ответственность</h3>
+        <div class="q-card-text">Готова принимать решения сама — это обсуждаем на старте. В процессе проекта не теряюсь и не пропадаю со связи: довожу до результата, даже когда задач много. Бросить проект на середине — не про меня.</div>
+      </div>
+      <div class="q-card reveal">
+        <div class="q-card-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h3 class="q-card-title">Надёжность</h3>
+        <div class="q-card-text">Всё фиксируем в договоре. Если взяла задачу — довожу до конца, без напоминаний и контроля сверху. Не раз проходила путь с нуля: приходила первым сотрудником, когда ещё ничего не было, и дорастала до ведущих ролей.</div>
+      </div>
+      <div class="q-card reveal">
+        <div class="q-card-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+        </div>
+        <h3 class="q-card-title">Честность и любовь к делу</h3>
+        <div class="q-card-text">Открытость и максимальная вовлечённость в каждый проект. Именно поэтому беру не все проекты подряд — только те, в которые могу вложиться по-настоящему.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="s" id="experience" style="background: var(--bg-soft);">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-eyebrow">Опыт работы</div>
+      <h2 class="section-title">Конкретные <em>результаты</em></h2>
+      <p class="section-sub">Кликните по карточке, чтобы раскрыть подробные результаты по каждой позиции.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-dot">1</div>
+        <div class="tl-card" data-toggle>
+          <span class="tl-period">Оборот до 15 млн ₽/мес · команда 15+</span>
+          <h3 class="tl-role">Заместитель директора по операционной части</h3>
+          <div class="tl-company">Поставщик автозапчастей · B2B + B2C</div>
+          <p class="tl-context">Импорт из Китая и закуп по регионам РФ, продажи через кросс-докинг. 2 юрлица (ООО + ИП).</p>
+          <button class="tl-toggle">
+            <span>Раскрыть результаты</span>
+            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <ul class="tl-bullets">
+            <li><strong>Управляла операционкой ООО с оборотом <span class="num">12–15 млн ₽/мес</span>.</strong> Логистика, коммуникация с B2B-клиентами, разрешение конфликтных ситуаций. Сохранила ключевого клиента в ситуации с угрозой отключения и штрафа.</li>
+            <li><strong>Восстановила бухгалтерию из «красной зоны».</strong> Пришла в полный хаос — документы за 1,5 года в одной стопке, утерянные файлы, регулярные требования ФНС. Систематизировала первичку (акты, счета-фактуры, накладные), организовала архив, наладила взаимодействие с бухгалтером — передачу данных и контроль сроков сдачи отчётности. Контролировала своевременность выплат и приоритизацию платежей. Сняла организацию с риска штрафов.</li>
+            <li><strong>Открыла ИП с нуля до <span class="num">250 000+ ₽</span> оборота за 1 месяц.</strong> Оформление документов, открытие счетов, настройка 1С, договоры. Привлекла 3 B2B-клиента в декабре — традиционно сложный для новых сделок месяц.</li>
+            <li><strong>Выстроила работу с ВЭД (Китай).</strong> Валютные платежи, постановка договоров на учёт через СБЕР Бизнес / Дом РФ / ВТБ, работа с агентами.</li>
+            <li><strong>Снизила ручной труд бухгалтерии на <span class="num">50%</span></strong> за счёт настройки интеграций между учётными системами.</li>
+            <li><strong>Освободила 2–3 часа в день у логиста.</strong> Внедрила интеграцию: менеджеры сами в один клик видят выгодные варианты доставки и оформляют заявки. Разработала регламент маршрутных листов.</li>
+            <li><strong>Внедрила корпоративную почту на собственном домене (Яндекс 360).</strong> Распределила нагрузку с 1 общего ящика на 6 персональных, устранила «потерянные письма».</li>
+            <li><strong>Перевела процессы в централизованный таск-трекер (YouGile)</strong> вместо мессенджеров — прозрачность, контроль сроков, история задач.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-dot">2</div>
+        <div class="tl-card" data-toggle>
+          <span class="tl-period">Производство с нуля · до 15–20 человек</span>
+          <h3 class="tl-role">Операционный менеджер</h3>
+          <div class="tl-company">Bubble Bag · производство бескаркасной мебели для маркетплейсов</div>
+          <p class="tl-context">Производство и продажа на WB / Ozon / Я.Маркет. Стартовала первым офисным сотрудником.</p>
+          <button class="tl-toggle">
+            <span>Раскрыть результаты</span>
+            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <ul class="tl-bullets">
+            <li><strong>Снизила себестоимость материала более чем в <span class="num">2 раза</span></strong> — с 70 ₽ до 30–40 ₽ за кг. Связалась с мебельными фабриками по всей России, провела переговоры, выстроила логистику.</li>
+            <li><strong>Расширила базу поставщиков сырья с 1 до ~15 организаций.</strong> Лично контролировала переговоры, договоры, цены, поставки. Вывела формулу минимальных остатков на складе.</li>
+            <li><strong>Выстроила офис с нуля.</strong> Пришла первым офисным сотрудником, к моменту ухода производство выросло до 15–20 человек.</li>
+            <li><strong>Написала с нуля должностные инструкции и регламенты на 10+ позиций,</strong> проводила обучение и сопровождение новых сотрудников.</li>
+            <li><strong>Внедрила охрану труда на производстве</strong> — журналы, инструктажи, расследования несчастных случаев.</li>
+            <li><strong>Внедрила таск-менеджер</strong> для постановки задач и единой отчётности команды.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-dot">3</div>
+        <div class="tl-card" data-toggle>
+          <span class="tl-period">Текущий проект · 50–150 гостей на событие</span>
+          <h3 class="tl-role">Операционный менеджер мероприятий</h3>
+          <div class="tl-company">Музыкальные события нового формата · серия офлайн-событий</div>
+          <p class="tl-context">Запуск серии офлайн-событий с нуля совместно с собственником. Формат развивается и масштабируется.</p>
+          <button class="tl-toggle">
+            <span>Раскрыть результаты</span>
+            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <ul class="tl-bullets">
+            <li><strong>Провела события в рамках сметы — без перерасхода бюджета.</strong> Веду смету, контролирую расходы и выплаты подрядчикам и артистам.</li>
+            <li><strong>Каждое событие прошло без срывов по таймингу.</strong> Отвечаю за расписание, поставки, монтаж и координацию по часам в день события.</li>
+            <li><strong>Хорошие отзывы и возвраты гостей на следующие события</strong> — формат подтвердил себя и продолжает масштабироваться.</li>
+            <li><strong>Выстроила операционные процессы серийного мероприятия с нуля</strong> — совместно с собственником отвечаю за полный цикл подготовки и реализации каждого события.</li>
+            <li><strong>Веду билеты, регистрацию и продажи</strong> — от учёта мест до коммуникации с гостями и сопровождения на площадке.</li>
+            <li><strong>Отвечаю за продвижение и привлечение гостей</strong> — наполняемость зала на каждое событие.</li>
+            <li><strong>Координирую подрядчиков и артистов</strong> — свет, звук, площадка, тайминг выступлений, согласования, ведение по сценарию.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-dot">4</div>
+        <div class="tl-card" data-toggle>
+          <span class="tl-period">Поток 120–150 чел/день · сеть 12 филиалов</span>
+          <h3 class="tl-role">Сервис-менеджер · Наставник</h3>
+          <div class="tl-company">Детский центр ОФП · сеть из 12 филиалов по РФ</div>
+          <p class="tl-context">Средний чек 7 000 ₽. Работа на ключевых метриках сервиса.</p>
+          <button class="tl-toggle">
+            <span>Раскрыть результаты</span>
+            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <ul class="tl-bullets">
+            <li><strong>Стала наставником через 6 месяцев работы</strong> по личной инициативе, сдала экзамен на «отлично».</li>
+            <li><strong>Обучила 10+ сервис-менеджеров.</strong> Ученики сдавали экзамен у основателя сети на один из высших баллов — подтверждено личной благодарностью основателя.</li>
+            <li><strong>Вела сессии по продажам и работе с лояльностью на 20 человек</strong> раз в 2 недели — материалы готовила самостоятельно. Управляющие филиалов отмечали практическую применимость подходов.</li>
+            <li><strong>Работала на ключевых метриках сервиса</strong> — конверсия и удержание клиентов.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="container">
+    <div class="cta-inner reveal">
+      <div class="section-eyebrow" style="font-size: 42px; letter-spacing: 4px; margin-bottom: 28px; font-family: 'Lora', serif; font-weight: 600; text-transform: uppercase;">Контакты</div>
+      <p>Открыта к&nbsp;предложениям и&nbsp;обсуждению формата работы.</p>
+      <div class="cta-buttons">
+        <a href="https://t.me/alesyabragina" class="btn btn-primary">
+          <svg fill="currentColor" viewBox="0 0 24 24" width="16" height="16"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+          Написать в Telegram
+        </a>
+        <a href="mailto:braginaalesyadmi@yandex.ru" class="btn btn-secondary">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          braginaalesyadmi@yandex.ru
+        </a>
+        <a href="tel:+79280406470" class="btn btn-secondary">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          +7 (928) 040-64-70
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © 2026 Алеся Брагина · Резюме
+  </div>
+</footer>
+
+<script>
+// Sticky nav shadow on scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Reveal animations
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// Timeline toggle
+document.querySelectorAll('[data-toggle] .tl-toggle').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const card = btn.closest('.tl-card');
+    card.classList.toggle('open');
+    const span = btn.querySelector('span');
+    span.textContent = card.classList.contains('open') ? 'Свернуть' : 'Раскрыть результаты';
+  });
+});
+
+// Open the first job by default
+document.querySelector('.tl-item .tl-card')?.classList.add('open');
+const firstSpan = document.querySelector('.tl-item .tl-toggle span');
+if (firstSpan) firstSpan.textContent = 'Свернуть';
+</script>
+
+</body>
+</html>  font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
